@@ -72,10 +72,7 @@ Panel {
   }
 
   function encode(s) {
-    return String(s)
-      .replace(/%/g, "%25").replace(/ /g, "%20").replace(/#/g, "%23")
-      .replace(/\?/g, "%3F").replace(/&/g, "%26")
-      .replace(/'/g, "%27").replace(/"/g, "%22")
+    return encodeURIComponent(String(s))
   }
 
   function obsidianUri(relPath) {
